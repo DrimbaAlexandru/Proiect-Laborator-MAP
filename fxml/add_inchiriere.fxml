@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label alignment="CENTER" maxHeight="20.0" minHeight="20.0" prefHeight="20.0" prefWidth="390.0" text="Filmul selectat se va inchiria clientului selectat." />
+      <Separator prefHeight="1.0" prefWidth="390.0" />
+      <AnchorPane maxHeight="30.0" minHeight="30.0" prefHeight="30.0" prefWidth="390.0">
+         <children>
+            <Separator layoutX="189.0" layoutY="-1.0" orientation="VERTICAL" prefHeight="50.0" prefWidth="13.0" />
+            <TextField fx:id="TF_Filtru_nume_client_inchiriere" layoutX="37.0" layoutY="4.0" prefHeight="25.0" prefWidth="125.0" promptText="Cauta nume client" />
+            <TextField fx:id="TF_Filtru_titlu_film_inchiriere" layoutX="224.0" layoutY="4.0" prefHeight="25.0" prefWidth="125.0" promptText="Cauta titlu film" />
+         </children>
+      </AnchorPane>
+      <Separator prefWidth="200.0" visible="false">
+         <VBox.margin>
+            <Insets bottom="2.0" top="2.0" />
+         </VBox.margin>
+      </Separator>
+      <HBox prefHeight="220.0" prefWidth="400.0">
+         <children>
+            <ListView fx:id="view_EI_select_client" prefHeight="200.0" prefWidth="200.0">
+               <HBox.margin>
+                  <Insets right="2.0" />
+               </HBox.margin>
+            </ListView>
+            <Separator orientation="VERTICAL" prefHeight="206.0" prefWidth="10.0" />
+            <ListView fx:id="view_EI_select_film" prefHeight="200.0" prefWidth="200.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="50.0" prefWidth="400.0" spacing="10.0">
+         <children>
+            <Button fx:id="btn_EI_confirm" mnemonicParsing="false" prefWidth="70.0" text="OK">
+               <HBox.margin>
+                  <Insets right="2.0" />
+               </HBox.margin>
+            </Button>
+            <Separator orientation="VERTICAL" prefHeight="200.0" />
+            <Button fx:id="btn_EI_cancel" mnemonicParsing="false" prefWidth="70.0" text="Cancel" />
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets left="5.0" right="5.0" />
+   </padding>
+</VBox>

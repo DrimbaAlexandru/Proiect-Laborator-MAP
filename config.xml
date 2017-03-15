@@ -1,0 +1,54 @@
+<configurare>
+    <Controller_Type isSQL="true">
+    </Controller_Type>
+
+    <SQL_Connection DBName="Java" ServerIP="127.0.0.1" ServerPort="52735">
+    </SQL_Connection>
+
+    <!--  ++++++++++++++++++++++++++++++++++++++++++++  -->
+
+    <Validator_film>
+        <Constructor arg_count="0">
+            <className>Validator.ValidatorFilm</className>
+        </Constructor>
+    </Validator_film>
+
+    <Validator_client>
+        <Constructor arg_count="0">
+            <className>Validator.ValidatorClient</className>
+        </Constructor>
+    </Validator_client>
+
+    <Validator_inchiriere>
+        <Constructor arg_count="0">
+            <className>Validator.ValidatorInchiriere</className>
+        </Constructor>
+    </Validator_inchiriere>
+
+    <!--  ++++++++++++++++++++++++++++++++++++++++++++  -->
+
+    <Controller_film>
+        <Constructor arg_count="2">
+            <className>MVC.ControllerFilmSQL</className>
+            <argument nr="0">Validator_film</argument>
+            <argument nr="1">SQL_Connection</argument>
+        </Constructor>
+    </Controller_film>
+
+    <Controller_client>
+        <Constructor arg_count="2">
+            <className>MVC.ControllerClientSQL</className>
+            <argument nr="0">Validator_client</argument>
+            <argument nr="1">SQL_Connection</argument>
+        </Constructor>
+    </Controller_client>
+
+    <Controller_inchiriere>
+        <Constructor arg_count="2">
+            <className>MVC.ControllerInchirieriSQL</className>
+            <argument nr="0">Validator_inchiriere</argument>
+            <argument nr="1">SQL_Connection</argument>
+        </Constructor>
+    </Controller_inchiriere>
+
+</configurare>

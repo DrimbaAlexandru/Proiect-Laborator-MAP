@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="379.0" prefWidth="600.0" spacing="5.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Separator prefWidth="200.0" visible="false" />
+      <HBox prefHeight="30.0" prefWidth="600.0" spacing="5.0">
+         <children>
+            <Separator orientation="VERTICAL" prefHeight="200.0" prefWidth="5.0" visible="false" />
+            <Button fx:id="btn_add_inchiriere" mnemonicParsing="false" onMouseClicked="#handel_adauga_inchiriere" text="Adauga" />
+            <Separator orientation="VERTICAL" prefHeight="200.0" prefWidth="63.0" visible="false" />
+            <Button fx:id="btn_del_inchiriere" mnemonicParsing="false" onMouseClicked="#handle_btn_del_inchiriere" text="Sterge" />
+            <MenuButton mnemonicParsing="false" text="Ordine afisare">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handel_set_ordine_inchiriere_client" text="Clientul primul" />
+                  <MenuItem mnemonicParsing="false" onAction="#handel_set_ordine_inchiriere_film" text="Filmul primul" />
+               </items>
+            </MenuButton>
+            <Separator orientation="VERTICAL" prefHeight="200.0" />
+            <TextField fx:id="TF_filterI_nume" prefHeight="25.0" prefWidth="110.0" promptText="Nume" />
+            <TextField fx:id="TF_filterI_titlu" prefHeight="25.0" prefWidth="110.0" promptText="Titlu" />
+         </children>
+      </HBox>
+      <Separator prefWidth="200.0" />
+      <HBox prefHeight="275.0" prefWidth="600.0">
+         <children>
+            <Separator orientation="VERTICAL" prefHeight="200.0" visible="false" />
+            <TableView fx:id="tableView_inchirieri" maxHeight="269.0" minHeight="250.0" prefHeight="269.0" prefWidth="590.0" />
+         </children>
+      </HBox>
+      <HBox fx:id="pagination_filme_HBox" prefHeight="45.0" prefWidth="600.0">
+         <children>
+            <Pagination fx:id="pagination_inchirieri" pageCount="5" prefHeight="45.0" prefWidth="511.0" />
+            <TextField fx:id="jump_to_page_inchirieri" prefHeight="25.0" prefWidth="70.0" promptText="Jump to..." />
+         </children>
+      </HBox>
+   </children>
+</VBox>

@@ -1,0 +1,56 @@
+<configurare>
+    <Controller_Type isSQL="false">
+    </Controller_Type>
+
+    <SQL_Connection DBName="Java" ServerIP="127.0.0.1" ServerPort="52735">
+    </SQL_Connection>
+
+    <!--  ++++++++++++++++++++++++++++++++++++++++++++  -->
+
+    <Validator_film>
+        <Constructor arg_count="0">
+            <className>Validator.ValidatorFilm</className>
+        </Constructor>
+    </Validator_film>
+
+    <Validator_client>
+        <Constructor arg_count="0">
+            <className>Validator.ValidatorClient</className>
+        </Constructor>
+    </Validator_client>
+
+    <Validator_inchiriere>
+        <Constructor arg_count="0">
+            <className>Validator.ValidatorInchiriere</className>
+        </Constructor>
+    </Validator_inchiriere>
+
+    <!--  ++++++++++++++++++++++++++++++++++++++++++++  -->
+
+    <Controller_film>
+        <Constructor arg_count="2">
+            <className>FileRepositories.ControllerFilm_PlainText</className>
+            <argument nr="0">Validator_film</argument>
+            <argument nr="1">file_repo\repof.txt</argument>
+        </Constructor>
+    </Controller_film>
+
+    <Controller_client>
+        <Constructor arg_count="2">
+            <className>FileRepositories.ControllerClient_XML</className>
+            <argument nr="0">Validator_client</argument>
+            <argument nr="1">file_repo\repoc.xml</argument>
+        </Constructor>
+    </Controller_client>
+
+    <Controller_inchiriere>
+        <Constructor arg_count="4">
+            <className>FileRepositories.ControllerInchiriere_Serialized</className>
+            <argument nr="0">Validator_inchiriere</argument>
+            <argument nr="1">file_repo\repoi.bin</argument>
+            <argument nr="2">Controller_film</argument>
+            <argument nr="3">Controller_client</argument>
+        </Constructor>
+    </Controller_inchiriere>
+
+</configurare>
